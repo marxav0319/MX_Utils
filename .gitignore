@@ -1,0 +1,4 @@
+*.pyc
+mx_utils/tests.py
+mx_utils/user*.py
+MX_Utils.egg-info/
