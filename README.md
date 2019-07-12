@@ -12,7 +12,10 @@ holds only the python code that I work with.
 **Note:** This repository is nowhere near complete, I'm actively gathering all the bits of code I've
 written in a few different places and combining them here so that I have one place I can grab these
 pieces from.  Therefore, you should expect many changes in the future as well as random
-restructuring of this repository.
+restructuring of this repository.  Also, many of the methods I'm gathering were built for specific
+tasks, and in grabbing those methods here I'm in the process of generalizing the methods.  Because
+of this, updates may be slow to come due to the work needed to refactor the methods and wittle them
+down to general use-cases.
 
 ---
 
