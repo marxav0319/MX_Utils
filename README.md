@@ -1,8 +1,6 @@
 # MX Utils
 *Ver 0.1.0a*
 
----
-
 ## Description
 
 This is a collection of methods I use pretty often at work or in my personal/school projects.  I use
@@ -17,13 +15,10 @@ tasks, and in grabbing those methods here I'm in the process of generalizing the
 of this, updates may be slow to come due to the work needed to refactor the methods and wittle them
 down to general use-cases.
 
----
-
 ## Usage
 
 Forthcoming.
 
----
 
 ## Repository Structure
 
@@ -41,8 +36,6 @@ mx_utils
 |
 |-databases.py
 ```
-
----
 
 ## Documentation
 
