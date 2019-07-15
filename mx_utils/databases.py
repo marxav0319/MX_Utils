@@ -99,7 +99,8 @@ def get_file_from_sftp(filepath, download_filepath, hostname, user_id, user_pass
     cnopts = pysftp.CnOpts()
     cnopts.hostkeys = None
 
-    with pysftp.Connection(host=hostname, username=user_id, password=user_password, port=port, cnopts=cnopts) as sftp:
+    with pysftp.Connection(host=hostname, username=user_id, password=user_password, port=port,
+                           cnopts=cnopts) as sftp:
         try:
             sftp.get(filepath, download_filepath)
             print('Successfully Downloaded %s to %s' % (filepath, download_filepath))
