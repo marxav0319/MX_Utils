@@ -17,6 +17,7 @@ setup(
         'numpy',
         'pyodbc',
         'pysftp',
-        'requests'
+        'requests',
+        'PyPDF2'
     ]
 )
