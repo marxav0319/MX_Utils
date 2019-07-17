@@ -55,10 +55,12 @@ def get_latex_document_start(document_type, packages):
     preamble.append('\n\\begin{document}\n')
     return ''.join(preamble)
 
-def compile_latex_to_pdf(filepath, output_directory, latex_mode='-interaction=nonstopmode'):
+def compile_latex_to_pdf(filepath, output_directory, latex_mode=r'-interaction=nonstopmode',
+                         print_to_console=False):
     """
     Given a .tex file, compiles that file into a pdf.  Requires that pdflatex is installed on the
-    machine calling this method and is useable by the current user.
+    machine calling this method and is useable by the current user (pdflatex.exe must be available
+    in the user's PATH variable).
 
     Args:
         filepath <str>: The filepath of the .tex file
@@ -66,14 +68,19 @@ def compile_latex_to_pdf(filepath, output_directory, latex_mode='-interaction=no
                                 will be stored).
         latex_mode <str>: The optional arguments for the pdflatex compiler.  Default is to run in
                           nonstopmode with '-interaction=nonstopmode'.
+        print_to_console <bool>: Whether to pipe the pdflatex.exe console output to stdout and
+                                 stderr or to set them both to os.devnull.
 
     Returns:
         <None>: Compiles the given .tex file to .pdf.
     """
 
-    output_string = '-output_directory=%s' % output_directory
+    output_string = '-output-directory=%s' % output_directory
     call = ['pdflatex', latex_mode, output_string, filepath]
-    subprocess.call(call, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    if print_to_console:
+        subprocess.call(call)
+    else:
+        subprocess.call(call, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 def merge_pdfs(file_list, output_file_name, unlink_files=False):
     """
