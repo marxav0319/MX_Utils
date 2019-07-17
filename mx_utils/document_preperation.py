@@ -8,7 +8,7 @@ import os
 import subprocess
 from PyPDF2 import PdfFileMerger
 
-# This is a placeholder for now, need to update
+
 def get_latex_document_start(document_type, packages):
     """
     Generates the latex preamble as a string given the document type to create and the packages to
