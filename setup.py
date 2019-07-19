@@ -18,6 +18,7 @@ setup(
         'pyodbc',
         'pysftp',
         'requests',
-        'PyPDF2'
+        'PyPDF2',
+        'pywin32'
     ]
 )
