@@ -35,6 +35,14 @@ placeholders.
 mx_utils
 |
 |-databases.py
+|-document_preperation.py
+|
+|-mailer
+| |
+| |-base_mailer.py
+| |-outlook_mailer.py
+| \
+\
 ```
 
 ## Documentation
