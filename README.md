@@ -35,7 +35,7 @@ placeholders.
 mx_utils
 |
 |-databases.py
-|-document_preperation.py
+|-document_preparation.py
 |
 |-mailer
 | |
