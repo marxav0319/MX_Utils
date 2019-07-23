@@ -78,7 +78,8 @@ def get_sql_server_table(driver, server_name, db_name, table_name, user_id, user
     sql_statement = 'SELECT %s FROM %s.%s' % (selection, db_name, table_name)
     return pd.read_sql(sql_statement, conn)
 
-def get_file_from_sftp(filepath, download_filepath, hostname, user_id, user_password, port=22):
+def get_file_from_sftp(filepath, download_filepath, hostname, user_id, user_password, port=22,
+                       ignore_host_keys=False):
     """
     Downloads a file from a remote SFTP server.  This was used only to download .zip files
     containing .csv files.
@@ -90,6 +91,7 @@ def get_file_from_sftp(filepath, download_filepath, hostname, user_id, user_pass
         user_id <str>: The user id to login to the server.
         user_password <str>: The user password to login to the server.
         port <int>: The port to connect to.  Default is 22.
+        ignore_host_keys <bool>: Whether to ignore the hostkeys file.
 
     Returns:
         None: Download file to download_filepath if the file is available.
@@ -97,8 +99,10 @@ def get_file_from_sftp(filepath, download_filepath, hostname, user_id, user_pass
 
     # Ignore the host key
     cnopts = pysftp.CnOpts()
-    cnopts.hostkeys = None
+    if ignore_host_keys:
+        cnopts.hostkeys = None
 
+    # Set up the connection and download the file
     with pysftp.Connection(host=hostname, username=user_id, password=user_password, port=port,
                            cnopts=cnopts) as sftp:
         try:
