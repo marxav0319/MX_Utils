@@ -43,6 +43,8 @@ class Outlook_Mailer(Base_Mailer):
         self.cc_list = cc_list
         self.bcc_list = bcc_list
         self.attachments_list = attachments_list
+        self.application_dispatched = False
+        self.email_object_prepared = False
 
     def _prepare_mail_item(self):
         """Prepares the email object in outlook given the initialized variables."""
@@ -58,25 +60,53 @@ class Outlook_Mailer(Base_Mailer):
                 self.mail_object.Attachments.Add(filepath)
 
     def _dispatch_application_and_prepare_mail_item(self):
-        """Dispatches the Outlook application and prepares the email object."""
+        """Dispatches the Outlook application and prepares the email object if not done."""
 
-        self.application = win32.Dispatch('Outlook.Application')
-        self._prepare_mail_item()
+        # Dispatch application of not already dispatched.
+        if not self.application_dispatched:
+            self.application = win32.Dispatch('Outlook.Application')
+            self.application_dispatched = True
 
-    def send(self):
+        # Prepare the email object if it hasn't been prepared.
+        if not self.email_object_prepared:
+            self._prepare_mail_item()
+            self.email_object_prepared = True
+
+    def _reset_state(self):
+        """
+        Resets the state of the instance so that another email cannot be sent without updating
+        the required instantiation fields.
+        """
+
+        self.recipients = None
+        self.subjects = None
+        self.body = None
+        self.signature = None
+        self.cc_list = None
+        self.bcc_list = None
+        self.attachments_list = None
+        self.email_object_prepared = False
+
+    def send(self, clear_state=True):
         """Sends the prepared email object."""
 
         self._dispatch_application_and_prepare_mail_item()
         self.mail_object.Send()
+        if clear_state:
+            self._reset_state()
 
-    def save_draft(self):
+    def save_draft(self, clear_state=True):
         """Saves the prepared email object in the drafts folder in Outlook."""
 
         self._dispatch_application_and_prepare_mail_item()
         self.mail_object.save()
+        if clear_state:
+            self._reset_state()
 
-    def display_email(self):
+    def display_email(self, clear_state=True):
         """Displays the prepared email object to the user."""
 
         self._dispatch_application_and_prepare_mail_item()
         self.mail_object.Display(False)
+        if clear_state:
+            self._reset_state()
