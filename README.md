@@ -57,6 +57,7 @@ outlook_mailer.send()
 
 ## Documentation
 
-Documentation of the methods provided by this package are included in the `docs/` directory.  The
-documentation was generated with `pdoc3`, a very useful python package you can find 
-(here)[https://github.com/pdoc3/pdoc].
+Documentation of the methods provided by this package can be found via GitHub Pages
+(here)[https://marxav0319.github.io/MX_Utils/].  The generated HTML files can also be found in the
+`docs/` directory of this repository.  The documentation was generated with `pdoc3`, a very useful
+python package you can find (here)[https://github.com/pdoc3/pdoc].
