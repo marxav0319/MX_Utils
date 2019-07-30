@@ -37,7 +37,7 @@ older versions of Python (including Python 2).  In addition, the following packa
 ## Installation
 
 Simply clone this repository
-(https://github.com/marxav0319/MX_Utils)[https://github.com/marxav0319/MX_Utils], navigate to the
+[https://github.com/marxav0319/MX_Utils](https://github.com/marxav0319/MX_Utils), navigate to the
 directory with `cd <path-to-MX_Utils>`, then install with pip `python -m pip install ./`.  To
 uninstall, simply run `python -m pip uninstall mx_utils`.
 
@@ -58,6 +58,6 @@ outlook_mailer.send()
 ## Documentation
 
 Documentation of the methods provided by this package can be found via GitHub Pages
-(here)[https://marxav0319.github.io/MX_Utils/].  The generated HTML files can also be found in the
+[here](https://marxav0319.github.io/MX_Utils/).  The generated HTML files can also be found in the
 `docs/` directory of this repository.  The documentation was generated with `pdoc3`, a very useful
-python package you can find (here)[https://github.com/pdoc3/pdoc].
+python package you can find [here](https://github.com/pdoc3/pdoc).
