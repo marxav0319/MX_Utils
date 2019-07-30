@@ -3,15 +3,19 @@
 
 ## Description
 
-This repository holds a collection of Python methods I use often. I'm putting these methods together
-into a Python package so I can keep better track of them.  I'm actively adding to this in my spare
-time so it will grow, albeit slowly.
+This repository holds a collection of methods written in Python that have been useful to my work.
+Currently it holds methods under the following sub-headings:
 
-## Usage
++ Document Preperation
+  + Creating latex resources (strings and files)
+  + Compiling latex resources (requires pdflatex in PATH)
+  + Merging PDF files
++ Database reading
+  + Reading a SQL table into memory as a `pandas.DataFrame`
+  + Exporting REDCap records
+  + Downloading files via SFTP
++ Mailing
+  + Send emails via Microsoft Outlook programmatically.
 
-TBD
-
-
-## Repository Structure
-
-TBD
+This repository is actively under development, however there's enough in here for now for me to
+start using this as my library of generic methods.

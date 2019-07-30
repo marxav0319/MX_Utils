@@ -34,13 +34,13 @@ class Outlook_Mailer(Base_Mailer):
         The initializer for the Outlook_Mailer object.  Default for all args is None.
 
         Args:
-            recipients <str>: The list of recipient emails to send to (separated by semicolons).
-            subject <str>: The subject line of the email.
-            body <str>: The HTML body of the email.
-            signature <str>: The HTML signature of the email.
-            cc_list <list : str>: A list of emails to cc separated by semicolons.
-            bcc_list <list : str>: A list of emails to bcc separated by semicolons.
-            attachments_list <list : str>: A list of filepaths to the attachments to include in the
+            recipients (str): The list of recipient emails to send to (separated by semicolons).
+            subject (str): The subject line of the email.
+            body (str): The HTML body of the email.
+            signature (str): The HTML signature of the email.
+            cc_list (list : str): A list of emails to cc separated by semicolons.
+            bcc_list (list : str): A list of emails to bcc separated by semicolons.
+            attachments_list (list : str): A list of filepaths to the attachments to include in the
                                            email.
 
         Returns:
