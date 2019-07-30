@@ -6,11 +6,12 @@ from distutils.core import setup
 
 setup(
     name='MX_Utils',
-    version='0.1.0a',
+    version='0.2.0',
     packages=['mx_utils'],
     author='Mark Xavier',
     author_email='mark.j.xavier@gmail.com',
     url='https://github.com/marxav0319/MX_Utils',
+    license='LICENSE.txt',
     description='A set of methods I find useful for my daily work.',
     long_description=open('README.md').read(),
     install_requires=[

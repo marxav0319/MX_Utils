@@ -2,8 +2,6 @@
 This is a programmatic outlook mailer implemented for the Windows operating system (tested on
 Windows 10).  This may be expanded later but for now, Mac and *nix users will need to either write
 a different mailer or potentially use a Windows virtual machine.
-
-Author: Mark Xavier 
 """
 
 import os
@@ -38,9 +36,9 @@ class Outlook_Mailer(Base_Mailer):
             subject (str): The subject line of the email.
             body (str): The HTML body of the email.
             signature (str): The HTML signature of the email.
-            cc_list (list : str): A list of emails to cc separated by semicolons.
-            bcc_list (list : str): A list of emails to bcc separated by semicolons.
-            attachments_list (list : str): A list of filepaths to the attachments to include in the
+            cc_list (list of str): A list of emails to cc separated by semicolons.
+            bcc_list (list of str): A list of emails to bcc separated by semicolons.
+            attachments_list (list of str): A list of filepaths to the attachments to include in the
                                            email.
 
         Returns:
@@ -60,6 +58,19 @@ class Outlook_Mailer(Base_Mailer):
         Reinitializes the member variables in this instance of the object.  This method is here
         to avoid having to constantly create new instances of this mailer object to send out
         multiple emails.
+        
+        Args:
+            recipients (str): The list of recipient emails to send to (separated by semicolons).
+            subject (str): The subject line of the email.
+            body (str): The HTML body of the email.
+            signature (str): The HTML signature of the email.
+            cc_list (list of str): A list of emails to cc separated by semicolons.
+            bcc_list (list of str): A list of emails to bcc separated by semicolons.
+            attachments_list (list of str): A list of filepaths to the attachments to include in the
+                                           email.
+
+        Returns:
+            None
         """
 
         self.__init__(recipients, subject, body, signature, cc_list, bcc_list, attachments_list)
@@ -123,7 +134,16 @@ class Outlook_Mailer(Base_Mailer):
         self.email_object_prepared = False
 
     def send(self, clear_state=True):
-        """Sends the prepared email object."""
+        """
+        Sends the prepared email object.
+        
+        Args:
+            clear_state (bool): Whether to clear the data members of this class instance after
+                                acting on the created mail object.
+
+        Returns:
+            None
+        """
 
         self._dispatch_application_and_prepare_mail_item()
         self.mail_object.Send()
@@ -131,7 +151,16 @@ class Outlook_Mailer(Base_Mailer):
             self._reset_state()
 
     def save_draft(self, clear_state=True):
-        """Saves the prepared email object in the drafts folder in Outlook."""
+        """
+        Saves the prepared email object in the drafts folder in Outlook.
+        
+        Args:
+            clear_state (bool): Whether to clear the data members of this class instance after
+                                acting on the created mail object.
+
+        Returns:
+            None
+        """
 
         self._dispatch_application_and_prepare_mail_item()
         self.mail_object.save()
@@ -139,7 +168,16 @@ class Outlook_Mailer(Base_Mailer):
             self._reset_state()
 
     def display_email(self, clear_state=True):
-        """Displays the prepared email object to the user."""
+        """
+        Displays the prepared email object to the user.
+        
+        Args:
+            clear_state (bool): Whether to clear the data members of this class instance after
+                                acting on the created mail object.
+
+        Returns:
+            None
+        """
 
         self._dispatch_application_and_prepare_mail_item()
         self.mail_object.Display(False)

@@ -1,7 +1,5 @@
 """
 A collection of some utility functions that help me get data out of various databases.
-
-Author: Mark Xavier
 """
 
 from io import StringIO

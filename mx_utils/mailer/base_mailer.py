@@ -1,7 +1,5 @@
 """
 This base mailer class serves as an abstract class for the implementation for various mailers.
-
-Author: Mark Xavier
 """
 
 from abc import ABC, abstractmethod

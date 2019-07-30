@@ -1,7 +1,5 @@
 """
 A collection of document preperation methods that were helpful for my work.
-
-Author: Mark Xavier
 """
 
 import os
