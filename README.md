@@ -1,5 +1,9 @@
 # MX Utils
 
+## Author
+
+Mark Jason Xavier
+
 ## Description
 
 This repository holds a collection of methods written in Python that have been useful to my work.
