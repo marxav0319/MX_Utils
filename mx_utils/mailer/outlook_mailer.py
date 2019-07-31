@@ -1,7 +1,6 @@
 """
 This is a programmatic outlook mailer implemented for the Windows operating system (tested on
-Windows 10).  This may be expanded later but for now, Mac and *nix users will need to either write
-a different mailer or potentially use a Windows virtual machine.
+Windows 10).
 """
 
 import os
@@ -12,12 +11,7 @@ import win32com.client as win32
 class Outlook_Mailer(Base_Mailer):
     """
     A basic class that helps prepare and send, draft, or display an outlook mail item.  This is
-    meant to be used for automated mailing.  It is important to note that none of this class'
-    attributes are overwritten upon acting on the mail item (by saving, sending, or displaying).
-    This means that one can technically call 'Outlook_Mailer.save_draft()' and then call
-    'Outlook_Mailer.send()', and both will run seamlessly because the a separate object is created
-    on each action call.  This means it's also possible to send the same message to the same user
-    multiple times.
+    meant to be used for automated mailing.
 
     The object instance can be created with no arguments, creating a blank email template.  I've
     included this functionality so that the Outlook_Mailer.send() method can be called multiple
