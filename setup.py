@@ -6,7 +6,7 @@ from distutils.core import setup
 
 setup(
     name='MX_Utils',
-    version='0.2.0',
+    version='0.2.1',
     packages=['mx_utils'],
     author='Mark Xavier',
     author_email='mark.j.xavier@gmail.com',

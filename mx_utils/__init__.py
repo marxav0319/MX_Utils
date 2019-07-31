@@ -36,4 +36,4 @@ from .document_preparation import *
 from .mailer.outlook_mailer import Outlook_Mailer
 
 __name__ = 'mx_utils'
-__version__ = '0.2.0'
+__version__ = '0.2.1'
