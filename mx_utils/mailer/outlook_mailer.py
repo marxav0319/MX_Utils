@@ -6,7 +6,13 @@ Windows 10).
 import os
 
 from .base_mailer import Base_Mailer
-import win32com.client as win32
+
+try:
+    import win32com.client as win32
+except ImportError as e:
+    print('Error, pywin32 could not be imported.  If this is a windows machine, ensure that')
+    print('pywin32 is installed.  If this is not a windows machine, you will be unable to use')
+    print('the Outlook_Mailer.')
 
 class Outlook_Mailer(Base_Mailer):
     """
